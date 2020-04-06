@@ -32,6 +32,6 @@ jobs:
     - name: Build Uproot Image
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: bengal1/servicex_code_gen_func_adl_uproot:${{GITHUB_REF##*/}}
+        name: bengal1/servicex_code_gen_func_adl_uproot:${{ steps.extract_tag_name.outputs.imagetag }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
