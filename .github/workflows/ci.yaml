@@ -41,8 +41,11 @@ jobs:
         MATRIX_CONTEXT: ${{ toJson(matrix) }}
       run: echo "$MATRIX_CONTEXT"
 
-    - name: Get the version
+    - name: Get the GITHUB_REF
       run: echo "$GITHUB_REF"
+
+    - name: Get the Docker Tag
+      run: echo "${GITHUB_REF##*/}"
 
     - name: Build Uproot Image
       uses: elgohr/Publish-Docker-Github-Action@master
