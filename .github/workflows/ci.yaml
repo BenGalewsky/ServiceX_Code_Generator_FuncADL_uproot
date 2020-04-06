@@ -53,5 +53,5 @@ jobs:
         name: bengal1/servicex_code_gen_func_adl_uproot
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        tags: "${GITHUB_REF##*/}"
+        tags_names: true
         tag_semver: true
